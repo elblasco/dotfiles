@@ -104,13 +104,14 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias cat="bat"
 alias ls="exa"
-alias ll="exa -l"
-alias la="exa -al"
-alias l="exa -alh --icons"
+alias ll="exa -l --git"
+alias la="exa -al --git"
+alias l="exa -alh --icons --git"
 alias update="sudo pacman -Syyu"
 alias autoremove="sudo pacman -Qdtq | sudo pacman -Rs -"
 alias cl="clear"
-alias emacs="emacsclient -t -a 'emacs'"
+alias mountu="_ mount -o gid=1000,uid=1000"
+# alias emacs="emacsclient -t -a 'emacs'"
 
 # Appending to the $PATH binary for doom emacs
 export PATH="$PATH:$HOME/.config/emacs/bin"
