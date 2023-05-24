@@ -1,0 +1,73 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "dracula"
+#[theme.overrides]
+#idle_bg = "#123456"
+#idle_fg = "#abcdef"
+
+[icons]
+icons = "material-nf"
+[icons.overrides]
+bat = [
+    "\U000f007a", # nf-md-battery_10
+    "\U000f007b", # nf-md-battery_20
+    "\U000f007c", # nf-md-battery_30
+    "\U000f007d", # nf-md-battery_40
+    "\U000f007e", # nf-md-battery_50
+    "\U000f007f", # nf-md-battery_60
+    "\U000f0080", # nf-md-battery_70
+    "\U000f0081", # nf-md-battery_80
+    "\U000f0082", # nf-md-battery_90
+    "\U000f0079", # nf-md-battery
+]
+bat_charging = "\U000f140b"
+volume = [
+    "\U000f057f", # nf-fa-volume_low
+    "\U000f0580", # nf-md-volume_medium
+    "\U000f057e", # nf-md-volume_high
+]
+volume_muted = "\U000f0e08" # nf-md-volume_mute
+cpu = [
+    "\U000F0F86", # nf-md-speedometer_slow
+    "\U000F0F85", # nf-md-speedometer_medium
+    "\U000F04C5", # nf-md-speedometer
+]
+
+[[block]]
+block = "battery"
+info = 100
+good = 75
+warning = 15
+critical = 5
+empty_threshold = 1
+format = "$icon $percentage {|}"
+
+[[block]]
+block = "cpu"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+interval = 1
+warning = 20.0
+alert = 10.0
+format = " $icon blasco: $free.eng(w:2) "
+
+[[block]]
+block = "memory"
+format = " $icon $mem_used_percents.eng(w:2) "
+format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 1
+format = " $timestamp.datetime(f:'%A %Y/%m/%d %R') "
