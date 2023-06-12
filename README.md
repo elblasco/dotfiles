@@ -2,6 +2,7 @@
 
 Brief list of my dotfiles, the update of the repo will not be continuous.  
 I'm using Arch so some packages versions are pretty new, make sure you can satisfy all the requirements. (*vim-plug & doom emacs go brrrr*)  
+I suggest you to pre download the [jetbrains mono font](https://www.nerdfonts.com/font-downloads) that I set in the various files, is a nerd font so it supports a huge variety of gliphs.  
 The dotfiles are for:
 - [alacritty](https://alacritty.org)
 - [doom emacs](https://github.com/doomemacs/doomemacs)
